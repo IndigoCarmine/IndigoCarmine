@@ -5,20 +5,16 @@
 分子集合体（超分子）化学の研究をしています。分子を設計し、集合させ、その構造と熱力学を調べるまでの各段階で使うアプリを自作しています。<br>
 I work on molecular assembly (supramolecular) chemistry, and I build my own apps for each step from designing molecules to studying how they assemble.
 
-<a href="https://skillicons.dev"><img src="https://skillicons.dev/icons?i=rust,python,dart,blender,linux&theme=light" alt="Rust, Python, Dart, Blender, Linux"></a>
+<a href="https://skillicons.dev"><img src="https://skillicons.dev/icons?i=rust,python,dart,linux&theme=light" alt="Rust, Python, Dart, Linux"></a>
 
 </div>
 
 
 # 最近の作業 / Recent work
 
-ここ数か月は、集合体研究の流れ（**設計 → シミュレーション → 測定・解析**）に沿って、必要なアプリを一通りそろえることに時間を使っています。<br>
-Over the past few months I have been building a set of apps that covers the whole assembly workflow: **design → simulation → measurement and analysis**.
-
-
 ## 1. 集合体の熱力学を解析する / Analysing assembly thermodynamics
 
-**[fit_it](https://github.com/IndigoCarmine/fit_it)** — 超分子重合のデータを解析するためのデスクトップのフィッティングアプリ。isodesmic・cooperative（核サイズ N、温度依存・濃度依存）・両経路の競合モデルを備え、複数濃度の冷却曲線をグローバルフィットして ΔH・ΔS・核形成ペナルティを誤差付きで求めます。JASCO の UV-Vis データ（温度スキャン）を直接読み込めます。<br>
+- **[fit_it](https://github.com/IndigoCarmine/fit_it)** — 超分子重合のデータを解析するためのデスクトップのフィッティングアプリ。isodesmic・cooperative（核サイズ N、温度依存・濃度依存）・両経路の競合モデルを備え、複数濃度の冷却曲線をグローバルフィットして ΔH・ΔS・核形成ペナルティを誤差付きで求めます。JASCO の UV-Vis データ（温度スキャン）を直接読み込めます。<br>
 A desktop fitting app for supramolecular polymerization. It has isodesmic, cooperative (nucleus size N, temperature- and concentration-dependent) and competing-pathway models, and globally fits cooling curves at several concentrations to give ΔH, ΔS and the nucleation penalty with errors. It reads JASCO UV-Vis temperature scans directly.
 
 <p align="center">
@@ -68,7 +64,7 @@ Views PDB / GRO / TOP / MOL2 files in 3D and lets you select atoms and rename re
 </table>
 
 - **[gmx_harness](https://github.com/IndigoCarmine/gmx_harness)** — EM → NVT → NPT → 本計算、Martini（粗視化）、AWH、BAR などの計算一式をファイルとスクリプトとして生成するライブラリ。`plan → preview → write` の流れで書き込み前に衝突を確認するので、AI エージェントにも安全に使わせられます。<br>Generates complete simulation pipelines (including Martini coarse-graining, AWH and BAR) as files and scripts, with a `plan → preview → write` flow that checks for conflicts so AI agents can use it safely.
-- **[gplot](https://github.com/IndigoCarmine/gplot)** — GROMACS の `.xvg` と PLUMED の `COLVAR` をすぐ見るための xmgrace 風プロッタ。<br>A quick xmgrace-style plotter for GROMACS `.xvg` and PLUMED `COLVAR` files.
+- **[gplot](https://github.com/IndigoCarmine/gplot)** — GROMACS の `.xvg` と PLUMED の `COLVAR` をすぐ見るための xmgrace 風プロッタ。Wayland環境でxmgraceが安定して動かなかったので作りました。<br>A quick xmgrace-style plotter for GROMACS `.xvg` and PLUMED `COLVAR` files.
 - **[moleucle_3dview_rs](https://github.com/IndigoCarmine/moleucle_3dview_rs)** — 上のアプリが共通で使う wgpu の 3D 分子ビューア。MD サイズの系まで扱えます。<br>The wgpu 3D molecule viewer shared by the apps above; it scales to MD-sized systems.
 
 
@@ -89,13 +85,7 @@ A free, open-source structure editor. It opens ChemDraw files and gives the form
 <td width="220" align="center" valign="top"><img src="https://raw.githubusercontent.com/IndigoCarmine/open_draw_chemistry/master/docs/images/analysis-panel-ja.png" width="200" alt="Open DrawChemistry の解析パネル"></td>
 </tr>
 <tr>
-<td width="110" align="center" valign="top"><a href="https://github.com/IndigoCarmine/chem_3d_builder_rs"><img src="https://raw.githubusercontent.com/IndigoCarmine/chem_3d_builder_rs/master/assets/icon.svg" width="96" alt="chem_3d_builder_rs icon"></a></td>
-<td valign="top" colspan="2">
 
-**[chem_3d_builder_rs](https://github.com/IndigoCarmine/chem_3d_builder_rs)** — 2D で描いた構造式を 3D 化し、力場で構造最適化するアプリ。<br>
-Turns a 2D structure into 3D and optimizes it with a force field.
-
-</td>
 </tr>
 </table>
 
