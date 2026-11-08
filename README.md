@@ -124,8 +124,8 @@ The wgpu 3D molecule viewer shared by the apps above; it scales to MD-sized syst
 <td width="100" align="center"><a href="https://github.com/IndigoCarmine/open_draw_chemistry"><img src="https://raw.githubusercontent.com/IndigoCarmine/open_draw_chemistry/master/resources/icon.png" width="80" alt="Open DrawChemistry icon"></a></td>
 <td>
 
-**[Open DrawChemistry](https://github.com/IndigoCarmine/open_draw_chemistry)** — 無料・オープンソースの構造式エディタ。ChemDraw ファイルを開け、分子式・精密質量・m/z・元素分析・IUPAC 名の解析や 3D 構築までできます。<br>
-A free, open-source structure editor. It opens ChemDraw files and gives the formula, exact mass, m/z, elemental analysis and IUPAC name, and builds structures in 3D.
+**[Open DrawChemistry](https://github.com/IndigoCarmine/open_draw_chemistry)** — 無料・オープンソースの構造式エディタ。ChemDraw ファイルを開け、分子式・精密質量・m/z・元素分析・IUPAC 名の解析や 3D 構築までできます。さらに、描いたモノマーから**環・積層・らせん・結晶格子の集合体**を組み立て、原子の衝突チェックや多次元エネルギースキャン、ソフトコア最適化で集合体構造を検討できます。<br>
+A free, open-source structure editor. It opens ChemDraw files and gives the formula, exact mass, m/z, elemental analysis and IUPAC name, and builds structures in 3D. It also **assembles monomers into rings, stacks, helices and crystal lattices**, and lets you examine the assembly with clash checks, multi-dimensional energy scans and soft-core optimization.
 
 [![Website](https://img.shields.io/badge/website-open__draw__chemistry-7c5cff?logo=googlechrome&logoColor=white)](https://indigocarmine.github.io/open_draw_chemistry-site/en/)
 [![Release](https://img.shields.io/github/v/release/IndigoCarmine/open_draw_chemistry?color=7c5cff)](https://github.com/IndigoCarmine/open_draw_chemistry/releases/latest)
