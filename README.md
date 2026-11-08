@@ -5,10 +5,7 @@
 分子集合体（超分子）化学の研究をしています。分子を設計し、集合させ、その構造と熱力学を調べるまでの各段階で使うアプリを自作しています。<br>
 I work on molecular assembly (supramolecular) chemistry, and I build my own apps for each step from designing molecules to studying how they assemble.
 
-<a href="https://skillicons.dev"><img src="https://skillicons.dev/icons?i=rust,python,dart,linux&theme=light" alt="Rust, Python, Dart, Linux"></a>
-
-</div>
-
+![](http://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=IndigoCarmine&theme=github) ![](http://github-profile-summary-cards.vercel.app/api/cards/stats?username=IndigoCarmine&theme=github)
 
 # 最近の作業 / Recent work
 
@@ -148,5 +145,4 @@ All of the above applies to my own repositories. **When I contribute to someone 
 
 ![](http://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=IndigoCarmine&theme=github)
 
-![](http://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=IndigoCarmine&theme=github) ![](http://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=IndigoCarmine&theme=github)
-![](http://github-profile-summary-cards.vercel.app/api/cards/stats?username=IndigoCarmine&theme=github) ![](http://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=IndigoCarmine&theme=github&utcOffset=8)
+
