@@ -82,8 +82,8 @@ A viewer for checking GROMACS structures, topologies, index files and trajectori
 <td width="100" align="center"><a href="https://github.com/IndigoCarmine/kuromame-rs"><img src="https://raw.githubusercontent.com/IndigoCarmine/kuromame-rs/master/resources/icon-512.png" width="80" alt="Kuromame icon"></a></td>
 <td>
 
-**[Kuromame](https://github.com/IndigoCarmine/kuromame-rs)** — PDB / GRO / TOP / MOL2 を 3D で眺め、原子を選んで残基名を書き換えるアプリ。`.top` と `.gro` の残基名を同期できます。<br>
-Views PDB / GRO / TOP / MOL2 files in 3D and lets you select atoms and rename residues, keeping `.top` and `.gro` in sync.
+**[Kuromame](https://github.com/IndigoCarmine/kuromame-rs)** — PDB / GRO / TOP / MOL2 を 3D で眺め、原子を選んで残基名を書き換えるアプリ。`.top` と `.gro` の残基名を同期できます。分子や部位ごとに残基名を分けておけば、Blender の [Molecular Nodes](https://github.com/BradyAJohnston/MolecularNodes) で残基名ごとに色分けして描画できます。<br>
+Views PDB / GRO / TOP / MOL2 files in 3D and lets you select atoms and rename residues, keeping `.top` and `.gro` in sync. Giving each molecule or part its own residue name lets you colour them separately in Blender with [Molecular Nodes](https://github.com/BradyAJohnston/MolecularNodes).
 
 </td>
 </tr>
