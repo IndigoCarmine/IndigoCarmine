@@ -1,22 +1,19 @@
 <div align="center">
 
-# 🧪 IndigoCarmine
+#  IndigoCarmine
 
-研究で使う化学ソフトウェアを Rust で作っています。<br>
-I build chemistry software for my research, mostly in Rust.
+研究で使う化学ソフトウェアを作っています。<br>
+I build chemistry software for my research.
 
-<a href="https://skillicons.dev"><img src="https://skillicons.dev/icons?i=rust,python,js,dart,wasm,githubactions,blender,linux&theme=light" alt="Rust, Python, JavaScript, Dart, WebAssembly, GitHub Actions, Blender, Linux"></a>
+<a href="https://skillicons.dev"><img src="https://skillicons.dev/icons?i=rust,python,dart,blender,linux&theme=light" alt="Rust, Python, Dart, Blender, Linux"></a>
 
 </div>
 
 
-# 🚀 最近の作業 / Recent work
-
-ここ数か月は、研究で使う化学ソフトウェアを Rust で作り直すことに時間を使っています。<br>
-Over the past few months I have been rebuilding the chemistry software I use for research in Rust.
+# 最近の作業 / Recent work
 
 
-## ⭐ Open DrawChemistry
+##  Open DrawChemistry
 
 <table>
 <tr>
@@ -44,14 +41,13 @@ A free, open-source structure editor. It opens ChemDraw files and can name and a
 
 ## ⌬ 化学構造の描画まわり / Drawing chemical structures
 
-| | Repository | 説明 / Description |
-|:-:|---|---|
-| ✏️ | [**chembuider-rs**](https://github.com/IndigoCarmine/chembuider-rs) | Open DrawChemistry の中核になっている、egui の 2D 構造式エディタウィジェット。<br>The egui 2D structure-editor widget at the core of Open DrawChemistry. |
-| 📄 | [**cdx_file_rs**](https://github.com/IndigoCarmine/cdx_file_rs) | ChemDraw の CDX/CDXML ファイルを読み書き・描画する Pure Rust ライブラリ。<br>A pure-Rust library for reading, writing and rendering ChemDraw CDX/CDXML files. |
-| 🧊 | [**moleucle_3dview_rs**](https://github.com/IndigoCarmine/moleucle_3dview_rs) | egui 上で動く wgpu の 3D 分子ビューア。MD サイズの系まで扱えます。<br>A wgpu 3D molecule viewer that runs inside egui and scales to MD-sized systems. |
-| ⚙️ | [**molecule_optimizer_rs**](https://github.com/IndigoCarmine/molecule_optimizer_rs) | RDKit から UFF・MMFF94・DistGeom を移植した Pure Rust の分子力学（構造最適化、配座探索、スキャン）。<br>Pure-Rust molecular mechanics (optimization, conformer search, scans) with UFF, MMFF94 and DistGeom ported from RDKit. |
-| 🔗 | [**openbabel_rs**](https://github.com/IndigoCarmine/openbabel_rs) | OpenBabel の Rust バインディング。<br>Rust bindings to OpenBabel. |
-| 📎 | [**acauda-embed**](https://github.com/IndigoCarmine/acauda-embed) | 外部アプリで編集したオブジェクトを文書に埋め込むための IPC プロトコル（COM 不使用）。<br>An IPC protocol for embedding objects edited in external apps into documents, without COM. |
+|  Repository | 説明 / Description |
+|---|---|
+|  [**chembuider-rs**](https://github.com/IndigoCarmine/chembuider-rs) | Open DrawChemistry の中核になっている、egui の 2D 構造式エディタウィジェット。<br>The egui 2D structure-editor widget at the core of Open DrawChemistry. |
+| [**cdx_file_rs**](https://github.com/IndigoCarmine/cdx_file_rs) | ChemDraw の CDX/CDXML ファイルを読み書き・描画する Pure Rust ライブラリ。<br>A pure-Rust library for reading, writing and rendering ChemDraw CDX/CDXML files. |
+| [**moleucle_3dview_rs**](https://github.com/IndigoCarmine/moleucle_3dview_rs) | egui 上で動く wgpu の 3D 分子ビューア。MD サイズの系まで扱えます。<br>A wgpu 3D molecule viewer that runs inside egui and scales to MD-sized systems. |
+|[**molecule_optimizer_rs**](https://github.com/IndigoCarmine/molecule_optimizer_rs) | RDKit から UFF・MMFF94・DistGeom を移植した Pure Rust の分子力学（構造最適化、配座探索、スキャン）。<br>Pure-Rust molecular mechanics (optimization, conformer search, scans) with UFF, MMFF94 and DistGeom ported from RDKit. |
+|  [**acauda-embed**](https://github.com/IndigoCarmine/acauda-embed) | 外部アプリで編集したオブジェクトを文書に埋め込むための IPC プロトコル（COM 不使用）。<br>An IPC protocol for embedding objects edited in external apps into documents, without COM. |
 
 <p align="center">
 <img src="https://raw.githubusercontent.com/IndigoCarmine/cdx_file_rs/master/sample_img/png/Reaction.png" width="520" alt="A reaction scheme rendered by cdx_file_rs"><br>
