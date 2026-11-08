@@ -1,9 +1,9 @@
 <div align="center">
 
-#  IndigoCarmine
+# IndigoCarmine
 
-研究で使う化学ソフトウェアを作っています。<br>
-I build chemistry software for my research.
+分子集合体（超分子）化学の研究をしています。分子を設計し、集合させ、その構造と熱力学を調べるまでの各段階で使うアプリを自作しています。<br>
+I work on molecular assembly (supramolecular) chemistry, and I build my own apps for each step from designing molecules to studying how they assemble.
 
 <a href="https://skillicons.dev"><img src="https://skillicons.dev/icons?i=rust,python,dart,blender,linux&theme=light" alt="Rust, Python, Dart, Blender, Linux"></a>
 
@@ -12,66 +12,109 @@ I build chemistry software for my research.
 
 # 最近の作業 / Recent work
 
+ここ数か月は、集合体研究の流れ（**設計 → シミュレーション → 測定・解析**）に沿って、必要なアプリを一通りそろえることに時間を使っています。<br>
+Over the past few months I have been building a set of apps that covers the whole assembly workflow: **design → simulation → measurement and analysis**.
 
-##  Open DrawChemistry
+
+## 1. 集合体の熱力学を解析する / Analysing assembly thermodynamics
+
+**[fit_it](https://github.com/IndigoCarmine/fit_it)** — 超分子重合のデータを解析するためのデスクトップのフィッティングアプリ。isodesmic・cooperative（核サイズ N、温度依存・濃度依存）・両経路の競合モデルを備え、複数濃度の冷却曲線をグローバルフィットして ΔH・ΔS・核形成ペナルティを誤差付きで求めます。JASCO の UV-Vis データ（温度スキャン）を直接読み込めます。<br>
+A desktop fitting app for supramolecular polymerization. It has isodesmic, cooperative (nucleus size N, temperature- and concentration-dependent) and competing-pathway models, and globally fits cooling curves at several concentrations to give ΔH, ΔS and the nucleation penalty with errors. It reads JASCO UV-Vis temperature scans directly.
+
+<p align="center">
+<a href="https://github.com/IndigoCarmine/fit_it"><img src="https://raw.githubusercontent.com/IndigoCarmine/fit_it/master/docs/manual/images/17_overlay.png" width="820" alt="fit_it: global fit of cooling curves at four concentrations with a temperature-dependent cooperative model"></a><br>
+<sub>4 濃度の冷却曲線を温度依存 cooperative モデルでグローバルフィットした画面 / Global fit of cooling curves at four concentrations with a temperature-dependent cooperative model</sub>
+</p>
+
+- **[sp_fitting_models](https://github.com/IndigoCarmine/sp_fitting_models)** — 同じ超分子重合モデル群の Python ライブラリ版。<br>The same supramolecular polymerization models as a Python library.
+
+
+## 2. 集合体を見る / Imaging assemblies
 
 <table>
 <tr>
-<td width="120" align="center" valign="top">
-<a href="https://github.com/IndigoCarmine/open_draw_chemistry"><img src="https://raw.githubusercontent.com/IndigoCarmine/open_draw_chemistry/master/resources/icon.png" width="100" alt="Open DrawChemistry icon"></a>
-</td>
+<td width="110" align="center" valign="top"><a href="https://github.com/IndigoCarmine/afm_files"><img src="https://raw.githubusercontent.com/IndigoCarmine/afm_files/master/assets/AppIcon.iconset/icon_256x256.png" width="96" alt="Kintuba AFM Viewer icon"></a></td>
 <td valign="top">
 
-**[open_draw_chemistry](https://github.com/IndigoCarmine/open_draw_chemistry)** — 無料・オープンソースの構造式エディタ。ChemDraw ファイルを開け、命名・解析・3D 構築までできます。<br>
-A free, open-source structure editor. It opens ChemDraw files and can name and analyse structures and build them in 3D.
+**[Kintuba AFM Viewer](https://github.com/IndigoCarmine/afm_files)** — Bruker Nanoscope の AFM ファイル（.spm）を一覧・表示・解析するアプリ。集合体の形態観察に使っています。高さマップ、多項式ラインフラットニング、カラーマップ調整に対応。<br>
+Browses, displays and analyses Bruker Nanoscope AFM files (.spm), which I use to look at assembly morphology: height maps, polynomial line flattening and colour-map control.
 
-[![Website](https://img.shields.io/badge/website-open__draw__chemistry-7c5cff?logo=googlechrome&logoColor=white)](https://indigocarmine.github.io/open_draw_chemistry-site/en/)
-[![Release](https://img.shields.io/github/v/release/IndigoCarmine/open_draw_chemistry?color=7c5cff)](https://github.com/IndigoCarmine/open_draw_chemistry/releases/latest)
-![Rust](https://img.shields.io/badge/Rust-000000?logo=rust&logoColor=white)
-![Platforms](https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey)
-![License](https://img.shields.io/badge/license-AGPL--3.0-blue)
-
-</td>
-<td width="220" align="center" valign="top">
-<img src="https://raw.githubusercontent.com/IndigoCarmine/open_draw_chemistry/master/docs/images/analysis-panel.png" width="200" alt="Analysis panel: formula, exact mass, m/z, elemental analysis and IUPAC name">
 </td>
 </tr>
 </table>
 
 
-## ⌬ 化学構造の描画まわり / Drawing chemical structures
+## 3. 集合体をシミュレーションする / Simulating assemblies (GROMACS)
 
-|  Repository | 説明 / Description |
-|---|---|
-|  [**chembuider-rs**](https://github.com/IndigoCarmine/chembuider-rs) | Open DrawChemistry の中核になっている、egui の 2D 構造式エディタウィジェット。<br>The egui 2D structure-editor widget at the core of Open DrawChemistry. |
-| [**cdx_file_rs**](https://github.com/IndigoCarmine/cdx_file_rs) | ChemDraw の CDX/CDXML ファイルを読み書き・描画する Pure Rust ライブラリ。<br>A pure-Rust library for reading, writing and rendering ChemDraw CDX/CDXML files. |
-| [**moleucle_3dview_rs**](https://github.com/IndigoCarmine/moleucle_3dview_rs) | egui 上で動く wgpu の 3D 分子ビューア。MD サイズの系まで扱えます。<br>A wgpu 3D molecule viewer that runs inside egui and scales to MD-sized systems. |
-|[**molecule_optimizer_rs**](https://github.com/IndigoCarmine/molecule_optimizer_rs) | RDKit から UFF・MMFF94・DistGeom を移植した Pure Rust の分子力学（構造最適化、配座探索、スキャン）。<br>Pure-Rust molecular mechanics (optimization, conformer search, scans) with UFF, MMFF94 and DistGeom ported from RDKit. |
-|  [**acauda-embed**](https://github.com/IndigoCarmine/acauda-embed) | 外部アプリで編集したオブジェクトを文書に埋め込むための IPC プロトコル（COM 不使用）。<br>An IPC protocol for embedding objects edited in external apps into documents, without COM. |
+<table>
+<tr>
+<td width="110" align="center" valign="top"><a href="https://github.com/IndigoCarmine/manul_cat_rs"><img src="https://raw.githubusercontent.com/IndigoCarmine/manul_cat_rs/master/resources/icon.png" width="96" alt="manul_cat_rs icon"></a></td>
+<td valign="top">
+
+**[manul_cat_rs](https://github.com/IndigoCarmine/manul_cat_rs)** — GROMACS の構造・トポロジー・インデックス・トラジェクトリを見て確かめるビューア。もとは `.top` に書いた分子間相互作用の設定ミスを見つけるために作り、今は粗視化系や表面も扱えます。<br>
+A viewer for checking GROMACS structures, topologies, index files and trajectories. It started as a way to catch mistakes in intermolecular interactions defined in `.top` files and now also handles coarse-grained systems and surfaces.
+
+</td>
+</tr>
+<tr>
+<td width="110" align="center" valign="top"><a href="https://github.com/IndigoCarmine/kuromame-rs"><img src="https://raw.githubusercontent.com/IndigoCarmine/kuromame-rs/master/resources/icon-512.png" width="96" alt="Kuromame icon"></a></td>
+<td valign="top">
+
+**[Kuromame](https://github.com/IndigoCarmine/kuromame-rs)** — PDB / GRO / TOP / MOL2 を 3D で眺め、原子を選んで残基名を書き換えるアプリ。`.top` と `.gro` の残基名を同期できます。<br>
+Views PDB / GRO / TOP / MOL2 files in 3D and lets you select atoms and rename residues, keeping `.top` and `.gro` in sync.
+
+</td>
+</tr>
+</table>
+
+- **[gmx_harness](https://github.com/IndigoCarmine/gmx_harness)** — EM → NVT → NPT → 本計算、Martini（粗視化）、AWH、BAR などの計算一式をファイルとスクリプトとして生成するライブラリ。`plan → preview → write` の流れで書き込み前に衝突を確認するので、AI エージェントにも安全に使わせられます。<br>Generates complete simulation pipelines (including Martini coarse-graining, AWH and BAR) as files and scripts, with a `plan → preview → write` flow that checks for conflicts so AI agents can use it safely.
+- **[gplot](https://github.com/IndigoCarmine/gplot)** — GROMACS の `.xvg` と PLUMED の `COLVAR` をすぐ見るための xmgrace 風プロッタ。<br>A quick xmgrace-style plotter for GROMACS `.xvg` and PLUMED `COLVAR` files.
+- **[moleucle_3dview_rs](https://github.com/IndigoCarmine/moleucle_3dview_rs)** — 上のアプリが共通で使う wgpu の 3D 分子ビューア。MD サイズの系まで扱えます。<br>The wgpu 3D molecule viewer shared by the apps above; it scales to MD-sized systems.
+
+
+## 4. 分子を設計する / Designing molecules
+
+<table>
+<tr>
+<td width="110" align="center" valign="top"><a href="https://github.com/IndigoCarmine/open_draw_chemistry"><img src="https://raw.githubusercontent.com/IndigoCarmine/open_draw_chemistry/master/resources/icon.png" width="96" alt="Open DrawChemistry icon"></a></td>
+<td valign="top">
+
+**[Open DrawChemistry](https://github.com/IndigoCarmine/open_draw_chemistry)** — 無料・オープンソースの構造式エディタ。ChemDraw ファイルを開け、分子式・精密質量・m/z・元素分析・IUPAC 名の解析や 3D 構築までできます。<br>
+A free, open-source structure editor. It opens ChemDraw files and gives the formula, exact mass, m/z, elemental analysis and IUPAC name, and builds structures in 3D.
+
+[![Website](https://img.shields.io/badge/website-open__draw__chemistry-7c5cff?logo=googlechrome&logoColor=white)](https://indigocarmine.github.io/open_draw_chemistry-site/en/)
+[![Release](https://img.shields.io/github/v/release/IndigoCarmine/open_draw_chemistry?color=7c5cff)](https://github.com/IndigoCarmine/open_draw_chemistry/releases/latest)
+
+</td>
+<td width="220" align="center" valign="top"><img src="https://raw.githubusercontent.com/IndigoCarmine/open_draw_chemistry/master/docs/images/analysis-panel-ja.png" width="200" alt="Open DrawChemistry の解析パネル"></td>
+</tr>
+<tr>
+<td width="110" align="center" valign="top"><a href="https://github.com/IndigoCarmine/chem_3d_builder_rs"><img src="https://raw.githubusercontent.com/IndigoCarmine/chem_3d_builder_rs/master/assets/icon.svg" width="96" alt="chem_3d_builder_rs icon"></a></td>
+<td valign="top" colspan="2">
+
+**[chem_3d_builder_rs](https://github.com/IndigoCarmine/chem_3d_builder_rs)** — 2D で描いた構造式を 3D 化し、力場で構造最適化するアプリ。<br>
+Turns a 2D structure into 3D and optimizes it with a force field.
+
+</td>
+</tr>
+</table>
+
+- **[molecule_optimizer_rs](https://github.com/IndigoCarmine/molecule_optimizer_rs)** — RDKit から UFF・MMFF94・ETKDG を移植した Pure Rust の分子力学。構造最適化と配座探索に加えて、集合体構造の探索もできます。<br>Pure-Rust molecular mechanics with UFF, MMFF94 and ETKDG ported from RDKit; besides optimization and conformer search, it can search for assembly structures.
+- **[chembuider-rs](https://github.com/IndigoCarmine/chembuider-rs)** — Open DrawChemistry の中核になっている egui の 2D 構造式エディタウィジェット。<br>The egui 2D structure-editor widget at the core of Open DrawChemistry.
+- **[cdx_file_rs](https://github.com/IndigoCarmine/cdx_file_rs)** — ChemDraw の CDX/CDXML ファイルを読み書き・描画する Pure Rust ライブラリ（下の図はこのライブラリで描画）。<br>A pure-Rust library for reading, writing and rendering ChemDraw CDX/CDXML files (it rendered the figure below).
+- **[acauda-embed](https://github.com/IndigoCarmine/acauda-embed)** — 外部アプリで編集したオブジェクトを文書に埋め込むための IPC プロトコル（COM 不使用）。<br>An IPC protocol for embedding objects edited in external apps into documents, without COM.
 
 <p align="center">
-<img src="https://raw.githubusercontent.com/IndigoCarmine/cdx_file_rs/master/sample_img/png/Reaction.png" width="520" alt="A reaction scheme rendered by cdx_file_rs"><br>
-<sub>cdx_file_rs で描画した ChemDraw ファイル / A ChemDraw file rendered by cdx_file_rs</sub>
+<img src="https://raw.githubusercontent.com/IndigoCarmine/cdx_file_rs/master/sample_img/png/Reaction.png" width="460" alt="A ChemDraw reaction scheme rendered by cdx_file_rs">
 </p>
 
 
-## 🧬 分子動力学（GROMACS） / Molecular dynamics
+## 5. 図にする / Making figures
 
-| | Repository | 説明 / Description |
-|:-:|---|---|
-| 🐱 | [**manul_cat_rs**](https://github.com/IndigoCarmine/manul_cat_rs) | GROMACS のトポロジー（.top）とインデックス（.ndx）の分子間相互作用の設定を GUI で確認するツール。<br>A GUI for checking the intermolecular interaction settings in GROMACS .top and .ndx files. |
-| 🛡️ | [**gmx_harness**](https://github.com/IndigoCarmine/gmx_harness) | EM → NVT → NPT → 本計算、Martini、AWH、BAR などの計算一式をファイルとスクリプトとして生成。`plan → preview → write` の流れで書き込み前に衝突を確認するので、AI エージェントも安全に扱えます。<br>Generates complete simulation pipelines as files and scripts. A `plan → preview → write` flow checks for conflicts before writing, so AI agents can use it safely. |
+- **[figs_rs](https://github.com/IndigoCarmine/figs_rs)** — 論文の図やポスターを、TOML で構造と制約を書いて組むツール（開発中）。<br>Composes paper figures and posters from structure and constraints written in TOML (in development).
 
 
-## 📊 解析・図 / Analysis and figures
-
-| | Repository | 説明 / Description |
-|:-:|---|---|
-| 📈 | [**fit_it**](https://github.com/IndigoCarmine/fit_it) | デスクトップのカーブフィッティングアプリ。<br>A desktop curve-fitting application. |
-| 🖼️ | [**figs_rs**](https://github.com/IndigoCarmine/figs_rs) | 論文の図やポスターを、TOML で構造と制約を書いて組むツール（開発中）。<br>Composes paper figures and posters from structure and constraints written in TOML (in development). |
-
-
-# 🤖 AIとCodingに対する宣誓
+# AIとCodingに対する宣誓
 
 ここに置いてあるコードの一部はClaude Codeに書かせています。Commitを確認いただければ明らかでしょう。私もプログラマーではなくなってしまったのだと思います。Agentic Codingの速度で人力のレビューするのは不可能で、それをする必要もないと思います。そこで、開発をAIに合わせるために意図的にレビューしていません。バグが有っても困らないものと、問題があれば使用感で気づけるものはコードを読んでいません。
 
@@ -80,7 +123,7 @@ GUIのレイアウト、CLIの出力整形、図の見た目、Blenderのスク�
 以上は自分のリポジトリでの話です。**ほかのOSSに関わる場合は、内容によらず確実に自分で確認していきます。**
 
 
-# 🤖 My policy on AI and code
+# My policy on AI and code
 
 Some of the code here was written by Claude Code, as the commit history makes clear. As agentic coding has advanced, reviewing everything by hand has become impossible, so I deliberately skip review in places in order to keep development fast. There is only one criterion for what gets reviewed: whether a bug would fail visibly.
 
@@ -89,7 +132,7 @@ GUI layout, CLI output formatting, how figures look, Blender scripts, and build 
 All of the above applies to my own repositories. **When I contribute to someone else's open source project, I check the code myself without exception.**
 
 
-# 📈 Stats
+# Stats
 
 ![](http://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=IndigoCarmine&theme=github)
 
