@@ -33,15 +33,6 @@ The same supramolecular polymerization models as a Python library.
 
 </td>
 </tr>
-<tr>
-<td width="100" align="center"></td>
-<td>
-
-**[figs_rs](https://github.com/IndigoCarmine/figs_rs)** — 論文の図やポスターを、TOML で構造と制約を書いて組むツール（開発中）。<br>
-Composes paper figures and posters from structure and constraints written in TOML (in development).
-
-</td>
-</tr>
 </table>
 
 
@@ -104,16 +95,7 @@ Generates complete simulation pipelines (including Martini coarse-graining, AWH 
 A quick xmgrace-style plotter for GROMACS `.xvg` and PLUMED `COLVAR` files, written because xmgrace was unstable on Wayland.
 
 </td>
-</tr>
-<tr>
-<td width="100" align="center"></td>
-<td>
 
-**[moleucle_3dview_rs](https://github.com/IndigoCarmine/moleucle_3dview_rs)** — 上のアプリが共通で使う wgpu の 3D 分子ビューア。MD サイズの系まで扱えます。<br>
-The wgpu 3D molecule viewer shared by the apps above; it scales to MD-sized systems.
-
-</td>
-</tr>
 </table>
 
 
@@ -124,7 +106,7 @@ The wgpu 3D molecule viewer shared by the apps above; it scales to MD-sized syst
 <td width="100" align="center"><a href="https://github.com/IndigoCarmine/open_draw_chemistry"><img src="https://raw.githubusercontent.com/IndigoCarmine/open_draw_chemistry/master/resources/icon.png" width="80" alt="Open DrawChemistry icon"></a></td>
 <td>
 
-**[Open DrawChemistry](https://github.com/IndigoCarmine/open_draw_chemistry)** — 無料・オープンソースの構造式エディタ。ChemDraw ファイルを開け、分子式・精密質量・m/z・元素分析・IUPAC 名の解析や 3D 構築までできます。さらに、描いたモノマーから**環・積層・らせん・結晶格子の集合体**を組み立て、原子の衝突チェックや多次元エネルギースキャン、ソフトコア最適化で集合体構造を検討できます。<br>
+**[Open DrawChemistry](https://github.com/IndigoCarmine/open_draw_chemistry)** — 無料・オープンソースの構造式エディタ。ChemDraw ファイルを開け、3D 構築までできます。さらに、描いたモノマーから**環・積層・らせん・結晶格子の集合体**を組み立て、原子の衝突チェックや多次元エネルギースキャン、ソフトコア最適化で集合体構造を検討できます。<br>
 A free, open-source structure editor. It opens ChemDraw files and gives the formula, exact mass, m/z, elemental analysis and IUPAC name, and builds structures in 3D. It also **assembles monomers into rings, stacks, helices and crystal lattices**, and lets you examine the assembly with clash checks, multi-dimensional energy scans and soft-core optimization.
 
 [![Website](https://img.shields.io/badge/website-open__draw__chemistry-7c5cff?logo=googlechrome&logoColor=white)](https://indigocarmine.github.io/open_draw_chemistry-site/en/)
@@ -132,42 +114,7 @@ A free, open-source structure editor. It opens ChemDraw files and gives the form
 
 </td>
 </tr>
-<tr>
-<td width="100" align="center"></td>
-<td>
 
-**[molecule_optimizer_rs](https://github.com/IndigoCarmine/molecule_optimizer_rs)** — RDKit から UFF・MMFF94・ETKDG を移植した Pure Rust の分子力学。構造最適化と配座探索に加えて、集合体構造の探索もできます。<br>
-Pure-Rust molecular mechanics with UFF, MMFF94 and ETKDG ported from RDKit; besides optimization and conformer search, it can search for assembly structures.
-
-</td>
-</tr>
-<tr>
-<td width="100" align="center"></td>
-<td>
-
-**[chembuider-rs](https://github.com/IndigoCarmine/chembuider-rs)** — Open DrawChemistry の中核になっている egui の 2D 構造式エディタウィジェット。<br>
-The egui 2D structure-editor widget at the core of Open DrawChemistry.
-
-</td>
-</tr>
-<tr>
-<td width="100" align="center"></td>
-<td>
-
-**[cdx_file_rs](https://github.com/IndigoCarmine/cdx_file_rs)** — ChemDraw の CDX/CDXML ファイルを読み書き・描画する Pure Rust ライブラリ。<br>
-A pure-Rust library for reading, writing and rendering ChemDraw CDX/CDXML files.
-
-</td>
-</tr>
-<tr>
-<td width="100" align="center"></td>
-<td>
-
-**[acauda-embed](https://github.com/IndigoCarmine/acauda-embed)** — 外部アプリで編集したオブジェクトを文書に埋め込むための IPC プロトコル（COM 不使用）。<br>
-An IPC protocol for embedding objects edited in external apps into documents, without COM.
-
-</td>
-</tr>
 </table>
 
 
